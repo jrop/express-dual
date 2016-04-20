@@ -24,6 +24,8 @@ app.get('/', dual()
 	}))
 ```
 
+When a request is made with the header `Accept` set to `application/json`, the middleware will respond with the data encoded as JSON, otherwise the middleware will call your view function.
+
 # API
 
 ## dual() : DualMiddleware

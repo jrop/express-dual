@@ -34,4 +34,6 @@ module.exports = function makeMiddleware() {
 		viewCallback = fn
 		return middleware
 	}
+
+	return middleware
 }

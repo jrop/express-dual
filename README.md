@@ -28,7 +28,7 @@ When a request is made with the header `Accept` set to `application/json`, the m
 
 # API
 
-## dual() : DualMiddleware
+## dual([ dataCallback, [ viewCallback ] ]) : DualMiddleware
 
 > Create dual middleware
 

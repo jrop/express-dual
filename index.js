@@ -1,10 +1,12 @@
 'use strict'
 
-module.exports = function makeMiddleware() {
-	var viewCallback = null
-	var dataCallback = null
+var assert = require('assert')
 
+module.exports = function makeMiddleware(dataCallback, viewCallback) {
 	var middleware = function (req, res, next) {
+		assert(typeof dataCallback == 'function', 'The data-callback must be a function')
+		assert(typeof viewCallback == 'function', 'The view-callback must be a function')
+
 		function onError(error) {
 			res.status(500).end(error.message)
 		}
@@ -16,8 +18,7 @@ module.exports = function makeMiddleware() {
 					res.json(data)
 				else
 					viewCallback(req, res, data, next)
-			})
-			.catch(onError)
+			}, onError)
 		} catch (error) {
 			onError(error)
 		}

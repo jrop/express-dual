@@ -1,6 +1,8 @@
 express-dual
 ============
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jrop/express-dual.svg)](https://greenkeeper.io/)
+
 > Split your express logic into separate data-fetching/view-rendering functions
 
 # Installation
